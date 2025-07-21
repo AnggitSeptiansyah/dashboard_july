@@ -1,7 +1,7 @@
 import { forwardRef } from "react"
-import { cn } from "../utils/cn"
 import PropTypes from "prop-types"
 import ReactLogo from "@/assets/react.svg"
+import { cn } from "../utils/cn"
 
 const Sidebar = forwardRef(({collapsed}, ref) => {
   return (
@@ -10,7 +10,7 @@ const Sidebar = forwardRef(({collapsed}, ref) => {
     >
         <div className="flex gap-x-3 p-3">
             <img src={ReactLogo} className="hidden dark:block" />
-            {!collapsed && <p className="text-lg font-medium text-slate-900 transition-colors dark:text-slate-50">LogoInside</p>}
+            {!collapsed && <p className="text-lg font-medium text-slate-900 transition-colors dark:text-slate-50">ReactDash</p>}
         </div>
         Sidebar
     </aside>

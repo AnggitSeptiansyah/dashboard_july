@@ -7,7 +7,7 @@ import { useRef, useState } from "react"
 
 const Layout = () => {
     const isDesktopDevice = useMediaQuery("(min-width: 768px)")
-    const [collapsed, setCollapsed] = useState(!isDesktopDevice)
+    const [collapsed, setCollapsed] = useState(false)
 
     const sidebarRef = useRef(null)
 

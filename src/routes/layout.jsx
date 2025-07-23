@@ -3,13 +3,17 @@ import { useMediaQuery } from "@uidotdev/usehooks"
 import Sidebar from "@/layouts/sidebar"
 import Header from "@/layouts/header"
 import { cn } from "@/utils/cn"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Layout = () => {
     const isDesktopDevice = useMediaQuery("(min-width: 768px)")
-    const [collapsed, setCollapsed] = useState(true)
+    const [collapsed, setCollapsed] = useState(!isDesktopDevice)
 
     const sidebarRef = useRef(null)
+
+    useEffect(() => {
+      setCollapsed(!isDesktopDevice)
+    }, [isDesktopDevice])
 
   return (
     <div className="min-h-screen bg-slate-100 transition-colors dark:bg-slate-900">
@@ -18,7 +22,9 @@ const Layout = () => {
         )} />
         <Sidebar ref={sidebarRef} collapsed={collapsed} />
         <div className={cn("transition-{margin} duration-300", collapsed ? "md:ml-[70px]" : "md:ml-[240px]")}>
-            <Header collapsed={collapsed} setCollapsed={setCollapsed} />
+            <Header 
+              collapsed={collapsed} 
+              setCollapsed={setCollapsed} />
             <div className="h-[calc(100vh-60px)] overflow-y-auto overflow-x-hidden p-6">
                 <Outlet />
             </div>

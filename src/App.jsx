@@ -27,7 +27,7 @@ function App() {
           element: <h1 className="title">Customers</h1>
         },
         {
-          path: "new-customers",
+          path: "new-customer",
           element: <h1 className="title">New Customers</h1>
         },
         {
@@ -37,6 +37,10 @@ function App() {
         {
           path: "reports",
           element: <h1 className="title">Reports</h1>
+        },
+        {
+          path: "products",
+          element: <h1 className="title">Product</h1>
         },
         {
           path: "new-product",
